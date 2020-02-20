@@ -1,25 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Nav from './Components/Nav/Nav';
+import SharkList from "./Components/Shark_List/Shark_list";
+import AddShark from "./Components/AddShark/AddShark"
+import { SharkProvider } from './Components/SharkContext/SharkContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SharkProvider>
+      <div className="App">
+        <Nav />
+        <SharkList />
+        <AddShark />
+      </div>
+    </SharkProvider>
   );
 }
 
